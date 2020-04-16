@@ -1,3 +1,7 @@
 # gulp-firestarter-2020
 
-Gulp boilerplate
+Gulp starter kit
+
+## Features
+
+...

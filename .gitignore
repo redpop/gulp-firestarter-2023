@@ -64,9 +64,3 @@ typings/
 
 # test output files
 test/ouput
-
-# sassdoc files
-sassdoc/
-
-# cypress files
-cypress/

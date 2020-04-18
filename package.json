@@ -15,7 +15,7 @@
   "author": "Martin Alker <martin.alker@mailbox.org>",
   "license": "MIT",
   "engines": {
-    "node": ">=12.13"
+    "node": ">=10.20"
   },
   "dependencies": {},
   "devDependencies": {

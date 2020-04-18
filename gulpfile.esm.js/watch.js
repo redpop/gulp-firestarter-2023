@@ -7,6 +7,7 @@ import images from './images';
 import javascript from './javascript';
 import templates, { resetTemplates } from './templates';
 import sass from './sass';
+import stylelint from './stylelint';
 
 export default function watch() {
     gulp.watch(config.PATHS.src.staticAssets, copy);

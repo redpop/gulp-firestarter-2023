@@ -1,3 +1,3 @@
-import foo from './modules/foo';
+import gulpFirestarter2020 from './modules/gulp-firestarter-2020';
 
-foo();
+gulpFirestarter2020();

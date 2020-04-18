@@ -1,18 +1,51 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
+    env: {
+        browser: true,
+        es6: true,
+        node: true,
     },
-    "extends": "eslint:recommended",
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+    extends: [
+        "eslint:recommended",
+        "airbnb-base",
+        "plugin:eslint-comments/recommended",
+        "plugin:unicorn/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "prettier",
+        "prettier/unicorn",
+        "plugin:prettier/recommended",
+    ],
+    globals: {
+        Atomics: "readonly",
+        SharedArrayBuffer: "readonly",
     },
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module"
+    parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: "module",
     },
-    "rules": {
-    }
+    plugins: ["eslint-comments", "import", "unicorn", "prettier"],
+    rules: {
+        "prettier/prettier": "error",
+    },
+    settings: {
+        "import/core-modules": [
+            "autoprefixer",
+            "browser-sync",
+            "cypress",
+            "fs-extra",
+            "gulp",
+            "gulp-debug",
+            "gulp-load-plugins",
+            "gulp-stylelint",
+            "js-yaml",
+            "mochawesome-merge",
+            "mochawesome-report-generator",
+            "panini",
+            "rimraf",
+            "vinyl-named",
+            "webpack",
+            "webpack-stream",
+            "yargs",
+        ],
+    },
 };

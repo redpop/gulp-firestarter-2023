@@ -1,0 +1,37 @@
+{
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-sass-guidelines"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "selector-class-pattern": [
+      "^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$",
+      {
+        "resolveNestedSelectors": true
+      }
+    ],
+    "function-parentheses-space-inside": "never-single-line",
+    "max-nesting-depth": [
+      3,
+      {
+        "ignore": [
+          "pseudo-classes",
+          "blockless-at-rules"
+        ],
+        "ignoreAtRules": [
+          "include"
+        ],
+        "severity": "warning"
+      }
+    ],
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ],
+    "order/properties-alphabetical-order": true,
+    "selector-max-compound-selectors": 4
+  }
+}

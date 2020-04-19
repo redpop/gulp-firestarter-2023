@@ -21,6 +21,7 @@ PATHS:
             - 'src/assets/img'
         staticAssets:
             - 'src/assets/*vendor/**/*'
+            - 'src/assets/img/favicon.ico'
         templates:
             pages:
                 - 'src/pages'

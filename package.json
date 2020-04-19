@@ -1,7 +1,7 @@
 {
   "name": "gulp-firestarter-2020",
   "version": "0.1.0",
-  "description": "Gulp starter kit",
+  "description": "Gulp starter kit 2020",
   "main": "gulpfile.esm.js",
   "scripts": {
     "start": "gulp",
@@ -12,7 +12,7 @@
     "cy:run": "cypress run",
     "preinstall": "npx check-engine"
   },
-  "author": "Martin Alker <martin.alker@mailbox.org>",
+  "author": "Martin Alker <hacktheplanet@mailbox.org>",
   "license": "MIT",
   "engines": {
     "node": ">=10.20"

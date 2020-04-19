@@ -16,6 +16,7 @@
 ## Features
 
 -   browserslist
+-   codyframe (hero)
 -   cypress / mocha
 -   editorconfig
 -   netlify

@@ -1,40 +1,41 @@
 PATHS:
     dist:
         folder:
-            - "dist"
+            - 'dist'
         css:
-            - "dist/css"
+            - 'dist/css'
         javascript:
-            - "dist/js"
+            - 'dist/js'
         images:
-            - "dist/img"
+            - 'dist/img'
     src:
         folder:
-            - "src"
+            - 'src'
         sass:
-            - "src/assets/scss"
+            - 'src/assets/scss'
         javascript:
-            - "src/assets/js"
+            - 'src/assets/js'
         javascriptEntries:
-            - "src/assets/js/app.js"
+            - 'src/assets/js/app.js'
         images:
-            - "src/assets/img"
+            - 'src/assets/img'
         staticAssets:
-            - "src/assets/*vendor/**/*"
+            - 'src/assets/*vendor/**/*'
+            - 'src/assets/img/favicon.ico'
         templates:
             pages:
-                - "src/pages"
+                - 'src/pages'
             layouts:
-                - "src/layouts"
+                - 'src/layouts'
             partials:
-                - "src/partials"
+                - 'src/partials'
             data:
-                - "src/data"
+                - 'src/data'
             helpers:
-                - "src/helpers"
+                - 'src/helpers'
     inlcudePathsForSass:
-        - "node_modules"
-    clean: "dist/**/*"
+        - 'node_modules'
+    clean: 'dist/**/*'
 
 BROWSERSYNC:
     port: 8000

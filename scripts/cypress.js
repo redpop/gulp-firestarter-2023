@@ -8,6 +8,7 @@ async function runTests() {
     const { totalFailed } = await cypress.run(); // get the number of failed tests
     const jsonReport = await merge(); // generate JSON report
     await generator.create(jsonReport);
+    // eslint-disable-next-line unicorn/no-process-exit
     process.exit(totalFailed); // exit with the number of failed tests
 }
 

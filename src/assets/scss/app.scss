@@ -1,3 +1,8 @@
-body {
-  font-size: 1em;
-}
+// import the basic style of the framework
+// ----- 👇 update this path according to your content structure
+@import 'codyhouse-framework/main/assets/css/base';
+
+// add your custom style
+@import 'custom-style';
+
+@import 'components/1-hero';

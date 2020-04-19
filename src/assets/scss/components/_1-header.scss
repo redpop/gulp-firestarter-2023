@@ -1,0 +1,256 @@
+/* --------------------------------
+
+File#: _1_header
+Title: Main Header
+Descr: Accessible website navigation
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+:root {
+  --header-height: 50px;
+
+  @include breakpoint(md) {
+    --header-height: 70px;
+  }
+}
+
+.header {
+  background-color: var(--color-bg);
+  height: var(--header-height);
+  z-index: var(--zindex-header);
+}
+
+.header__container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+
+// logo
+.header__logo {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+
+  a,
+  svg,
+  img {
+    display: block;
+  }
+}
+
+// nav
+.header__nav {
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-md);
+
+  display: none;
+  font-size: 1.25em; // controls the font-size of all elements (sm)
+  left: 0;
+  max-height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  &::before {
+    // top header bg + border
+    background: inherit;
+    border-bottom: 1px solid var(--color-contrast-low);
+    content: '';
+    display: block;
+    height: var(--header-height);
+    position: sticky;
+    top: 0;
+  }
+}
+
+.header__nav--is-visible {
+  display: block;
+}
+
+.header__nav-inner {
+  padding: var(--space-sm) var(--component-padding) var(--component-padding);
+}
+
+.header__label {
+  // menu label
+  color: var(--color-contrast-medium);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.header__item {
+  // nav list item
+  margin-bottom: var(--space-sm);
+}
+
+.header__link {
+  // link within list item
+  color: var(--color-contrast-higher);
+  text-decoration: none;
+
+  &:hover,
+  &[aria-current] {
+    // style of :hover + selected link
+    color: var(--color-primary);
+  }
+}
+
+.header__item--divider {
+  // element used to separate nav items
+  background-color: var(--color-contrast-low);
+  height: 1px;
+  width: 100%;
+}
+
+// menu trigger
+.header__trigger {
+  // menu button
+  position: relative;
+  z-index: 2;
+}
+
+// menu icon
+.header__trigger-icon {
+  background-color: currentColor;
+  display: block;
+  height: 2px;
+  margin-right: var(--space-xxs);
+  position: relative;
+  transition: 0.2s;
+  width: 1em;
+
+  &::before,
+  &::after {
+    background-color: currentColor;
+    content: '';
+    height: inherit;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: 0.2s;
+    width: inherit;
+  }
+
+  &::before {
+    transform: translateY(-5px);
+  }
+
+  &::after {
+    transform: translateY(5px);
+  }
+}
+
+.header__trigger[aria-expanded='true'] .header__trigger-icon {
+  background-color: transparent;
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@include breakpoint(md) {
+  .header__nav {
+    background-color: transparent;
+    box-shadow: none;
+    display: block;
+
+    font-size: 0.875em; // controls the font-size of all elements (md)
+    max-height: none;
+    overflow: visible;
+    overscroll-behavior: auto;
+    // reset
+    position: static;
+    width: auto;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .header__nav-inner {
+    padding: 0; // reset
+  }
+
+  .header__label {
+    // hide label
+    @include srHide;
+  }
+
+  .header__list {
+    align-items: center;
+    display: flex;
+  }
+
+  .header__item {
+    display: inline-block; // flex fallback
+    margin-bottom: 0;
+    margin-left: var(--space-md);
+  }
+
+  .header__item--divider {
+    height: 1em;
+    width: 1px;
+  }
+
+  .header__trigger {
+    display: none;
+  }
+}
+
+// no JS fallback
+html:not(.js) {
+  .header {
+    height: auto;
+    padding-top: var(--space-xs);
+  }
+
+  .header__trigger {
+    display: none;
+  }
+
+  .header__container {
+    display: block;
+  }
+
+  .header__nav {
+    box-shadow: none;
+    display: block;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    position: static;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .header__nav-inner {
+    height: auto;
+    overflow: visible;
+    padding: var(--space-md) 0;
+    position: static;
+  }
+
+  @include breakpoint(md) {
+    .header {
+      height: var(--header-height);
+      padding: 0;
+    }
+
+    .header__container {
+      display: flex;
+    }
+  }
+}

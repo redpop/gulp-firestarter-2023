@@ -16,6 +16,7 @@ export default function server(done) {
             },
             open: false,
             port: config.BROWSERSYNC.port,
+            notify: false,
             ghostMode: {
                 scroll: config.BROWSERSYNC.scrollmode,
             },

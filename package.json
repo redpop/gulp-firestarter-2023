@@ -15,7 +15,7 @@
   "author": "Martin Alker <hacktheplanet@mailbox.org>",
   "license": "MIT",
   "engines": {
-    "node": ">=10.20"
+    "node": ">=12"
   },
   "dependencies": {},
   "devDependencies": {

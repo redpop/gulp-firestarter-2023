@@ -9,15 +9,17 @@
 -   images (imagemin)
 -   javascript (webpack)
 -   sass (autoprefixer, postcss)
--   server (browsersync)
+-   server (Browsersync)
 -   stylelint
--   templates (panini by foundation for sites)
+-   templates (Panini by Foundation for Sites)
 
 ## Features
 
--   browserslist
--   codyframe (hero)
--   cypress / mocha
--   editorconfig
--   netlify
--   prettier
+-   Browserslist (https://github.com/browserslist/browserslist)
+-   CodyFrame (https://codyhouse.co/ds/components)
+-   Cypress / Mocha (https://www.cypress.io, https://mochajs.org/)
+-   EditorConfig (https://editorconfig.org/)
+-   ECMAScript modules (https://github.com/standard-things/esm)
+-   ESLint ((https://eslint.org/)
+-   Netlify (https://www.netlify.com/)
+-   Prettier (https://www.netlify.com/)

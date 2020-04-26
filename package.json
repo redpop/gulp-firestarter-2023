@@ -64,6 +64,7 @@
     "mochawesome-merge": "^4.0.3",
     "mochawesome-report-generator": "^5.1.0",
     "panini": "^1.6.3",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
     "stylelint": "^13.3.3",

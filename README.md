@@ -2,6 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9f6f1057-2ce5-44f6-9b4a-47430a9bb5c8/deploy-status)](https://app.netlify.com/sites/gulp-firestarter-2020/deploys)
 
+https://gulp-firestarter-2020.netlify.app/
+
 ## Tasks
 
 -   clean (dist folder)

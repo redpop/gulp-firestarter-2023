@@ -52,8 +52,6 @@ module.exports = {
             'panini',
             'rimraf',
             'vinyl-named',
-            'webpack',
-            'webpack-stream',
             'yargs',
         ],
     },

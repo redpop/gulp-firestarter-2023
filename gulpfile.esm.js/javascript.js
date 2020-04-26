@@ -1,46 +1,37 @@
-import gulp from 'gulp';
-import named from 'vinyl-named';
+import { src } from 'gulp';
 import plugins from 'gulp-load-plugins';
-import webpack2 from 'webpack';
-import webpackStream from 'webpack-stream';
 
 import * as config from './config';
 
 const $ = plugins();
 
-const webpackConfig = {
-    mode: config.PRODUCTION ? 'production' : 'development',
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'],
-                        compact: false,
-                    },
-                },
-            },
-        ],
-    },
-    devtool: !config.PRODUCTION && 'source-map',
+const execOptions = {
+    continueOnError: true, // default = false, true means don't emit error event
+    pipeStdout: true, // default = false, true means stdout is written to file.contents
+};
+
+const reporterOptions = {
+    err: true, // default = true, false means don't write err
+    stderr: true, // default = true, false means don't write stderr
+    stdout: true, // default = true, false means don't write stdout
 };
 
 export default function javascript() {
-    return gulp
-        .src(config.PATHS.src.javascriptEntries)
-        .pipe(named())
-        .pipe($.sourcemaps.init())
-        .pipe(webpackStream(webpackConfig, webpack2))
+    return src(config.PATHS.src.javascriptEntries, {
+        read: false,
+    })
         .pipe(
             $.if(
-                config.PRODUCTION,
-                $.uglify().on('error', (event) => {
-                    console.log(event); // eslint-disable-line no-console
-                })
+                !config.PRODUCTION,
+                $.exec(
+                    `parcel build <%= file.path %> --out-dir ${config.PATHS.dist.javascript} --public-url ./`,
+                    execOptions
+                ),
+                $.exec(
+                    `parcel build <%= file.path %> --out-dir ${config.PATHS.dist.javascript} --no-source-maps --public-url ./`,
+                    execOptions
+                )
             )
         )
-        .pipe($.if(!config.PRODUCTION, $.sourcemaps.write()))
-        .pipe(gulp.dest(config.PATHS.dist.javascript));
+        .pipe($.exec.reporter(reporterOptions));
 }

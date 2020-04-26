@@ -1,4 +1,4 @@
-import gulp from 'gulp';
+import { src } from 'gulp';
 import plugins from 'gulp-load-plugins';
 
 import * as config from './config';
@@ -16,8 +16,8 @@ const reporterOptions = {
     stdout: true, // default = true, false means don't write stdout
 };
 
-export default function javascript(done) {
-    gulp.src(config.PATHS.src.javascriptEntries, {
+export default function javascript() {
+    return src(config.PATHS.src.javascriptEntries, {
         read: false,
     })
         .pipe(
@@ -34,5 +34,4 @@ export default function javascript(done) {
             )
         )
         .pipe($.exec.reporter(reporterOptions));
-    done();
 }

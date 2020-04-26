@@ -1,5 +1,3 @@
 # Browsers that we support
-last 2 versions
-ie >= 11
-ios >= 10
-android >= 5.0
+
+defaults

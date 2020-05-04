@@ -18,7 +18,7 @@ https://gulp-firestarter-2020.netlify.app/
 ## Features
 
 -   [Browserslist](https://github.com/browserslist/browserslist)
--   [CodyFrame](https://codyhouse.co/ds/components)
+-   [tailwindcss](https://tailwindcss.com/)
 -   [Cypress](https://www.cypress.io) / [Mocha](https://mochajs.org)
 -   [EditorConfig](https://editorconfig.org)
 -   [ECMAScript modules](https://github.com/standard-things/esm)

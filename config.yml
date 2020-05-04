@@ -11,8 +11,8 @@ PATHS:
     src:
         folder:
             - 'src'
-        sass:
-            - 'src/assets/scss'
+        css:
+            - 'src/assets/css'
         javascript:
             - 'src/assets/js'
         javascriptEntries:
@@ -33,8 +33,6 @@ PATHS:
                 - 'src/data'
             helpers:
                 - 'src/helpers'
-    inlcudePathsForSass:
-        - 'node_modules'
     clean: 'dist/**/*'
 
 BROWSERSYNC:

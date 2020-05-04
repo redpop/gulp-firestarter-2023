@@ -10,7 +10,7 @@ https://gulp-firestarter-2020.netlify.app/
 -   copy (static assets)
 -   images ([imagemin](https://www.npmjs.com/package/imagemin))
 -   javascript ([Parcel](https://parceljs.org/))
--   sass ([Autoprefixer](https://www.npmjs.com/package/autoprefixer), [PostCSS](https://www.npmjs.com/package/postcss))
+-   postcss ([PostCSS](https://www.npmjs.com/package/postcss))
 -   server ([Browsersync](https://www.npmjs.com/package/browser-sync))
 -   [stylelint](https://www.npmjs.com/package/stylelint)
 -   templates ([Panini](https://www.npmjs.com/package/panini))

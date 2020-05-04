@@ -6,7 +6,7 @@ import copy from './copy';
 import images from './images';
 import javascript from './javascript';
 import templates, { resetTemplates } from './templates';
-import sass from './sass';
+import postcss from './postcss';
 import stylelint from './stylelint';
 
 export default function watch() {
@@ -27,9 +27,9 @@ export default function watch() {
         'all',
         gulp.series(resetTemplates, templates, reload)
     );
-    gulp.watch(`${config.PATHS.src.sass}/**/*.scss`).on(
+    gulp.watch(`${config.PATHS.src.css}/**/*.css`).on(
         'all',
-        gulp.series(sass, stylelint)
+        gulp.series(postcss, stylelint)
     );
     gulp.watch(`${config.PATHS.src.javascript}/**/*.js`).on(
         'all',

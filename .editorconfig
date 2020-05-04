@@ -15,11 +15,6 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 4
 
-# SCSS-Files
-[*.scss]
-indent_style = space
-indent_size = 2
-
 # HTML-Files
 [*.html]
 indent_style = space

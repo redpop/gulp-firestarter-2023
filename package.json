@@ -19,7 +19,7 @@
     "node": ">=12"
   },
   "dependencies": {
-    "codyhouse-framework": "^2.6.2"
+    "tailwindcss": "^1.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

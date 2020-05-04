@@ -50,6 +50,7 @@ module.exports = {
             'mochawesome-merge',
             'mochawesome-report-generator',
             'panini',
+            'postcss-preset-env',
             'rimraf',
             'vinyl-named',
             'yargs',

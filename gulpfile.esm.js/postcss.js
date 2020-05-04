@@ -1,23 +1,18 @@
-import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
 import gulp from 'gulp';
 import plugins from 'gulp-load-plugins';
+import postcssPresetEnv from 'postcss-preset-env';
 
 import * as config from './config';
 
 const $ = plugins();
 
-export default function sass() {
-    const postCssPlugins = [autoprefixer()].filter(Boolean);
+export default function postcss() {
+    const postCssPlugins = [postcssPresetEnv({ stage: 1 })].filter(Boolean);
 
     return gulp
-        .src(`${config.PATHS.src.sass}/app.scss`)
+        .src(`${config.PATHS.src.css}/app.css`)
         .pipe($.sourcemaps.init())
-        .pipe(
-            $.sass({
-                includePaths: config.PATHS.inlcudePathsForSass,
-            }).on('error', $.sass.logError)
-        )
         .pipe($.postcss(postCssPlugins))
         .pipe($.if(config.PRODUCTION, $.cleanCss({ compatibility: '*' })))
         .pipe($.if(!config.PRODUCTION, $.sourcemaps.write('.')))

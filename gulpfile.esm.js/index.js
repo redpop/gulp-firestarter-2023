@@ -5,7 +5,7 @@ import copy from './copy';
 import images from './images';
 import javascript from './javascript';
 import templates from './templates';
-import sass from './sass';
+import postcss from './postcss';
 import server from './server';
 import stylelint from './stylelint';
 import watch from './watch';
@@ -15,7 +15,7 @@ export {
     copy,
     images,
     javascript,
-    sass,
+    postcss,
     server,
     stylelint,
     templates,
@@ -23,7 +23,7 @@ export {
 };
 
 export function build(done) {
-    series(clean, parallel(templates, javascript, images, copy), sass)(done);
+    series(clean, parallel(templates, javascript, images, copy), postcss)(done);
 }
 
 export default series(build, server, watch);

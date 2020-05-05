@@ -5,27 +5,15 @@ import * as config from './config';
 import copy from './copy';
 import images from './images';
 import javascript from './javascript';
-import templates, { resetTemplates } from './templates';
 import postcss from './postcss';
 import stylelint from './stylelint';
+import templates from './templates';
 
 export default function watch() {
     gulp.watch(config.PATHS.src.staticAssets, copy);
-    gulp.watch(`${config.PATHS.src.templates.pages}/**/*.html`).on(
+    gulp.watch(`${config.PATHS.src.templates}/**/*.{html,njk}`).on(
         'all',
         gulp.series(templates, reload)
-    );
-    gulp.watch(`${config.PATHS.src.folder}/{layouts,partials}/**/*.html`).on(
-        'all',
-        gulp.series(resetTemplates, templates, reload)
-    );
-    gulp.watch(`${config.PATHS.src.folder}/data/**/*.{js,json,yml}`).on(
-        'all',
-        gulp.series(resetTemplates, templates, reload)
-    );
-    gulp.watch(`${config.PATHS.src.folder}/helpers/**/*.js`).on(
-        'all',
-        gulp.series(resetTemplates, templates, reload)
     );
     gulp.watch(`${config.PATHS.src.css}/**/*.css`).on(
         'all',

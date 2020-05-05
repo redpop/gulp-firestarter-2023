@@ -9,16 +9,16 @@ https://gulp-firestarter-2020.netlify.app/
 -   clean (dist folder)
 -   copy (static assets)
 -   images ([imagemin](https://www.npmjs.com/package/imagemin))
--   javascript ([Parcel](https://parceljs.org/))
+-   javascript ([Parcel](https://parceljs.org))
 -   postcss ([PostCSS](https://www.npmjs.com/package/postcss))
 -   server ([Browsersync](https://www.npmjs.com/package/browser-sync))
 -   [stylelint](https://www.npmjs.com/package/stylelint)
--   templates ([Panini](https://www.npmjs.com/package/panini))
+-   templates ([Nunjucks](https://mozilla.github.io/nunjucks))
 
 ## Features
 
 -   [Browserslist](https://github.com/browserslist/browserslist)
--   [tailwindcss](https://tailwindcss.com/)
+-   [tailwindcss](https://tailwindcss.com)
 -   [Cypress](https://www.cypress.io) / [Mocha](https://mochajs.org)
 -   [EditorConfig](https://editorconfig.org)
 -   [ECMAScript modules](https://github.com/standard-things/esm)

@@ -35,25 +35,12 @@ module.exports = {
     ],
     rules: {
         'prettier/prettier': 'error',
-    },
-    settings: {
-        'import/core-modules': [
-            'autoprefixer',
-            'browser-sync',
-            'cypress',
-            'fs-extra',
-            'gulp',
-            'gulp-debug',
-            'gulp-load-plugins',
-            'gulp-stylelint',
-            'js-yaml',
-            'mochawesome-merge',
-            'mochawesome-report-generator',
-            'panini',
-            'postcss-preset-env',
-            'rimraf',
-            'vinyl-named',
-            'yargs',
+        'import/no-extraneous-dependencies': [
+            'error',
+            {
+                devDependencies: true,
+            },
         ],
     },
+    settings: {},
 };

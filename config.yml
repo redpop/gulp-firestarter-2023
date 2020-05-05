@@ -23,16 +23,7 @@ PATHS:
             - 'src/assets/*vendor/**/*'
             - 'src/assets/img/favicon.ico'
         templates:
-            pages:
-                - 'src/pages'
-            layouts:
-                - 'src/layouts'
-            partials:
-                - 'src/partials'
-            data:
-                - 'src/data'
-            helpers:
-                - 'src/helpers'
+            - 'src/templates'
     clean: 'dist/**/*'
 
 BROWSERSYNC:

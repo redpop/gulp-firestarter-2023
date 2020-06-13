@@ -62,5 +62,9 @@ typings/
 # test output files
 test/ouput
 
+# cypress
+cypress/reports
+cypress/videos
+
 # parcel cache
 .cache

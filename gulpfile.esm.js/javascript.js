@@ -24,11 +24,13 @@ export default function javascript() {
             $.if(
                 !config.PRODUCTION,
                 $.exec(
-                    `parcel build <%= file.path %> --out-dir ${config.PATHS.dist.javascript} --public-url ./`,
+                    (file) =>
+                        `parcel build ${file.path} --out-dir ${config.PATHS.dist.javascript} --public-url ./`,
                     execOptions
                 ),
                 $.exec(
-                    `parcel build <%= file.path %> --out-dir ${config.PATHS.dist.javascript} --no-source-maps --public-url ./`,
+                    (file) =>
+                        `parcel build ${file.path} --out-dir ${config.PATHS.dist.javascript} --no-source-maps --public-url ./`,
                     execOptions
                 )
             )

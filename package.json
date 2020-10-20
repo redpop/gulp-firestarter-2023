@@ -19,6 +19,8 @@
     "node": ">=12"
   },
   "dependencies": {
+    "@sentry/browser": "^5.26.0",
+    "@sentry/tracing": "^5.26.0",
     "tailwindcss": "^1.9.5"
   },
   "devDependencies": {

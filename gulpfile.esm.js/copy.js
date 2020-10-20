@@ -1,4 +1,4 @@
-import { src, dest } from 'gulp';
+import { dest, src } from 'gulp';
 
 import * as config from './config';
 

@@ -35,49 +35,22 @@ indent_size = 4
 indent_style = space
 indent_size = 4
 
-[**.min.js]
-indent_style = ignore
-insert_final_newline = ignore
-
-# PHP-Files
-[*.php]
-indent_style = space
-indent_size = 4
-
 # MD-Files
 [*.md]
 indent_style = space
 indent_size = 4
 trim_trailing_whitespace = false
 
-# ReST-Files
-[*.rst]
-indent_style = space
-indent_size = 3
-
-# TypoScript
-[*.typoscript]
-indent_style = space
-indent_size = 4
-
 # YML-Files
-[{*.yml,*.yaml}]
+[{*.yml, *.yaml}]
 indent_style = space
 indent_size = 4
 
 # package.json, composer.json or .travis.yml
-[{package.json,composer.json,.travis.yml}]
+[{package.json, composer.json, .travis.yml}]
 indent_style = space
 indent_size = 2
-
-# The JSON files contain newlines inconsistently
-[*.json]
-insert_final_newline = ignore
 
 # Makefiles always use tabs for indentation
 [Makefile]
 indent_style = tab
-
-[*.py]
-indent_size = 4
-max_line_length = 80

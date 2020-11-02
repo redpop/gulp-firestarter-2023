@@ -1,4 +1,4 @@
-import { parallel, series } from 'gulp';
+import {parallel, series} from 'gulp';
 
 import clean from './clean';
 import copy from './copy';

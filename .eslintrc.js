@@ -1,12 +1,12 @@
 module.exports = {
-    env: {
-        browser: true,
-        es6: true,
-        node: true,
+    'env': {
+        'browser': true,
+        'es6': true,
+        'node': true,
     },
-    extends: [
+    'extends': [
         'eslint:recommended',
-        'airbnb-base',
+        'google',
         'plugin:eslint-comments/recommended',
         'plugin:unicorn/recommended',
         'plugin:import/errors',
@@ -17,15 +17,15 @@ module.exports = {
         'plugin:cypress/recommended',
         'plugin:mocha/recommended',
     ],
-    globals: {
-        Atomics: 'readonly',
-        SharedArrayBuffer: 'readonly',
+    'globals': {
+        'Atomics': 'readonly',
+        'SharedArrayBuffer': 'readonly',
     },
-    parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module',
+    'parserOptions': {
+        'ecmaVersion': 2018,
+        'sourceType': 'module',
     },
-    plugins: [
+    'plugins': [
         'cypress',
         'eslint-comments',
         'import',
@@ -33,14 +33,26 @@ module.exports = {
         'unicorn',
         'prettier',
     ],
-    rules: {
+    'rules': {
         'prettier/prettier': 'error',
         'import/no-extraneous-dependencies': [
             'error',
             {
-                devDependencies: true,
+                'devDependencies': true,
+            },
+        ],
+        'require-jsdoc': [
+            'error',
+            {
+                'require': {
+                    'FunctionDeclaration': false,
+                    'MethodDefinition': false,
+                    'ClassDeclaration': false,
+                    'ArrowFunctionExpression': false,
+                    'FunctionExpression': false,
+                },
             },
         ],
     },
-    settings: {},
+    'settings': {},
 };

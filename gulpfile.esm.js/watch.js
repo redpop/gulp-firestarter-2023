@@ -11,11 +11,11 @@ import templates from './templates';
 
 export default function watch() {
     gulp.watch(config.PATHS.src.staticAssets, copy);
-    gulp.watch(`${config.PATHS.src.templates}/**/*.{html,njk}`).on(
+    gulp.watch(`${config.PATHS.src.templates}/**/*`).on(
         'all',
         gulp.series(templates, reload),
     );
-    gulp.watch(`${config.PATHS.src.css}/**/*.css`).on(
+    gulp.watch(`${config.PATHS.src.css}/**/*.pcss`).on(
         'all',
         gulp.series(postcss, stylelint),
     );

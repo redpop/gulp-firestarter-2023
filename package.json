@@ -11,7 +11,8 @@
     "generate-report": "marge mochareports/*.json -f report-$$(date +'%Y%m%d-%H%M%S') -o mochareports",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "preinstall": "npx check-engine"
+    "preinstall": "npx check-engine",
+    "caniuse:update": "npx browserslist@latest --update-db"
   },
   "author": "Martin Alker <hacktheplanet@mailbox.org>",
   "license": "MIT",

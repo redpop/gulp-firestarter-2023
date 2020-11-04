@@ -11,9 +11,9 @@ module.exports = {
         'plugin:unicorn/recommended',
         'plugin:import/errors',
         'plugin:import/warnings',
-        'prettier',
-        'prettier/unicorn',
-        'plugin:prettier/recommended',
+        // 'prettier',
+        // 'prettier/unicorn',
+        // 'plugin:prettier/recommended',
         'plugin:cypress/recommended',
         'plugin:mocha/recommended',
     ],
@@ -31,16 +31,18 @@ module.exports = {
         'import',
         'mocha',
         'unicorn',
-        'prettier',
+        // 'prettier',
     ],
     'rules': {
-        'prettier/prettier': 'error',
+        // 'prettier/prettier': 'error',
+        // 'space-before-function-paren': ['error', 'never'],
         'import/no-extraneous-dependencies': [
             'error',
             {
                 'devDependencies': true,
             },
         ],
+        'indent': ['error', 4],
         'require-jsdoc': [
             'error',
             {

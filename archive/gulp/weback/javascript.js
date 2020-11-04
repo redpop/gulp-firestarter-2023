@@ -38,8 +38,8 @@ export default function javascript() {
                 config.PRODUCTION,
                 $.uglify().on('error', (event) => {
                     console.log(event); // eslint-disable-line no-console
-                })
-            )
+                }),
+            ),
         )
         .pipe($.if(!config.PRODUCTION, $.sourcemaps.write()))
         .pipe(gulp.dest(config.PATHS.dist.javascript));

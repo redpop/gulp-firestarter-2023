@@ -9,7 +9,7 @@ export default function templates() {
         .pipe(
             nunjucksRender({
                 path: [`${config.PATHS.src.templates}`],
-            })
+            }),
         )
         .pipe(gulp.dest(config.PATHS.dist.folder));
 }

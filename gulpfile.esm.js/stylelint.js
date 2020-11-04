@@ -7,7 +7,7 @@ export default function stylelint() {
     return gulp.src(`${config.PATHS.src.css}/**/*.css`).pipe(
         gulpStylelint({
             failAfterError: false,
-            reporters: [{ formatter: 'string', console: true }],
-        })
+            reporters: [{formatter: 'string', console: true}],
+        }),
     );
 }

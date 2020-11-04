@@ -16,11 +16,11 @@ export default function sass() {
         .pipe(
             $.sass({
                 includePaths: config.PATHS.inlcudePathsForSass,
-            }).on('error', $.sass.logError)
+            }).on('error', $.sass.logError),
         )
         .pipe($.postcss(postCssPlugins))
-        .pipe($.if(config.PRODUCTION, $.cleanCss({ compatibility: '*' })))
+        .pipe($.if(config.PRODUCTION, $.cleanCss({compatibility: '*'})))
         .pipe($.if(!config.PRODUCTION, $.sourcemaps.write('.')))
         .pipe(gulp.dest(config.PATHS.dist.css))
-        .pipe(browser.reload({ stream: true }));
+        .pipe(browser.reload({stream: true}));
 }

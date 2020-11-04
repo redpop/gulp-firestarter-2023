@@ -1,4 +1,4 @@
-import { src } from 'gulp';
+import {src} from 'gulp';
 import plugins from 'gulp-load-plugins';
 
 import * as config from './config';
@@ -26,14 +26,14 @@ export default function javascript() {
                 $.exec(
                     (file) =>
                         `parcel build ${file.path} --out-dir ${config.PATHS.dist.javascript} --public-url ./`,
-                    execOptions
+                    execOptions,
                 ),
                 $.exec(
                     (file) =>
                         `parcel build ${file.path} --out-dir ${config.PATHS.dist.javascript} --no-source-maps --public-url ./`,
-                    execOptions
-                )
-            )
+                    execOptions,
+                ),
+            ),
         )
         .pipe($.exec.reporter(reporterOptions));
 }

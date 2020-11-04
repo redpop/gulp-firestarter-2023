@@ -21,7 +21,7 @@ export default function server(done) {
                 scroll: config.BROWSERSYNC.scrollmode,
             },
         },
-        done
+        done,
     );
 }
 

@@ -13,7 +13,7 @@ export default function templates() {
                 partials: `${config.PATHS.src.templates.partials}`,
                 data: `${config.PATHS.src.templates.data}`,
                 helpers: `${config.PATHS.src.templates.helpers}`,
-            })
+            }),
         )
         .pipe(gulp.dest(config.PATHS.dist.folder));
 }

@@ -23,8 +23,10 @@ PATHS:
             - 'src/assets/*vendor/**/*'
             - 'src/assets/img/favicon.ico'
         templates:
-            - 'src/templates'
-    clean: 'dist/**/*'
+            - 'src/_includes'
+    clean:
+        - 'dist/**/*'
+        - '.cache/**/*'
 
 BROWSERSYNC:
     port: 8000

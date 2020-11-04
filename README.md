@@ -13,10 +13,11 @@ https://gulp-firestarter-2020.netlify.app/
 -   postcss ([PostCSS](https://www.npmjs.com/package/postcss))
 -   server ([Browsersync](https://www.npmjs.com/package/browser-sync))
 -   [stylelint](https://www.npmjs.com/package/stylelint)
--   templates ([Nunjucks](https://mozilla.github.io/nunjucks))
+-   templates ([11ty](https://www.11ty.dev/))
 
 ## Features
 
+-   [11ty](https://www.11ty.dev/)
 -   [Browserslist](https://github.com/browserslist/browserslist)
 -   [tailwindcss](https://tailwindcss.com)
 -   [Cypress](https://www.cypress.io) / [Mocha](https://mochajs.org)
@@ -25,3 +26,4 @@ https://gulp-firestarter-2020.netlify.app/
 -   [ESLint](https://eslint.org)
 -   [Netlify](https://www.netlify.com)
 -   [Prettier](https://www.npmjs.com/package/prettier)
+-   [Sentry](https://sentry.io)

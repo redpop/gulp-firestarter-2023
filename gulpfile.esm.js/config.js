@@ -1,8 +1,7 @@
 import fs from 'fs';
 import yaml from 'js-yaml';
-import yargs from 'yargs';
 
-export const PRODUCTION = !!yargs.argv.production;
+export const PRODUCTION = (process.env.NODE_ENV) === 'production';
 
 function loadConfig() {
     const ymlFile = fs.readFileSync('config.yml', 'utf8');

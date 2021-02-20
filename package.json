@@ -23,7 +23,6 @@
     "@sentry/browser": "^6.2.0",
     "@sentry/tracing": "^6.2.0",
     "@tailwindcss/typography": "^0.4.0",
-    "caniuse-lite": "^1.0.30001190",
     "tailwindcss": "^2.0.3"
   },
   "devDependencies": {

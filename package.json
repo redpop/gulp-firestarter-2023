@@ -5,7 +5,7 @@
   "main": "gulpfile.esm.js",
   "scripts": {
     "start": "gulp",
-    "build": "gulp build --production",
+    "build": "NODE_ENV=production gulp build",
     "gulp": "./node_modules/gulp-cli/bin/gulp.js",
     "combine-reports": "mochawesome-merge --reportDir cypress/reports/mocha > mochareports/report-$$(date +'%Y%m%d-%H%M%S').json",
     "generate-report": "marge mochareports/*.json -f report-$$(date +'%Y%m%d-%H%M%S') -o mochareports",
@@ -23,6 +23,7 @@
     "@sentry/browser": "^6.2.0",
     "@sentry/tracing": "^6.2.0",
     "@tailwindcss/typography": "^0.4.0",
+    "caniuse-lite": "^1.0.30001190",
     "tailwindcss": "^2.0.3"
   },
   "devDependencies": {
@@ -79,8 +80,7 @@
     "stylelint": "^13.11.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-order": "^4.1.0",
-    "vinyl-named": "^1.1.0",
-    "yargs": "^16.2.0"
+    "vinyl-named": "^1.1.0"
   },
   "repository": {
     "type": "git",

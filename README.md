@@ -6,24 +6,32 @@ https://gulp-firestarter-2020.netlify.app/
 
 ## Tasks
 
--   clean (dist folder)
--   copy (static assets)
--   images ([imagemin](https://www.npmjs.com/package/imagemin))
--   javascript ([Parcel](https://parceljs.org))
--   postcss ([PostCSS](https://www.npmjs.com/package/postcss))
--   server ([Browsersync](https://www.npmjs.com/package/browser-sync))
--   [stylelint](https://www.npmjs.com/package/stylelint)
--   templates ([11ty](https://www.11ty.dev/))
+- clean (dist folder)
+- copy (static assets)
+- images ([imagemin](https://www.npmjs.com/package/imagemin))
+- javascript ([Parcel](https://parceljs.org))
+- postcss ([PostCSS](https://www.npmjs.com/package/postcss))
+- server ([Browsersync](https://www.npmjs.com/package/browser-sync))
+- [stylelint](https://www.npmjs.com/package/stylelint)
+- templates ([11ty](https://www.11ty.dev/))
 
 ## Features
 
--   [11ty](https://www.11ty.dev/)
--   [Browserslist](https://github.com/browserslist/browserslist)
--   [tailwindcss](https://tailwindcss.com)
--   [Cypress](https://www.cypress.io) / [Mocha](https://mochajs.org)
--   [EditorConfig](https://editorconfig.org)
--   [ECMAScript modules](https://github.com/standard-things/esm)
--   [ESLint](https://eslint.org)
--   [Netlify](https://www.netlify.com)
--   [Prettier](https://www.npmjs.com/package/prettier)
--   [Sentry](https://sentry.io)
+- [11ty](https://www.11ty.dev/)
+- [Browserslist](https://github.com/browserslist/browserslist)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Cypress](https://www.cypress.io) / [Mocha](https://mochajs.org)
+- [EditorConfig](https://editorconfig.org)
+- [ECMAScript modules](https://github.com/standard-things/esm)
+- [ESLint](https://eslint.org)
+- [Prettier](https://www.npmjs.com/package/prettier)
+- [Sentry](https://sentry.io)
+- [Storybook](https://storybook.js.org)
+
+## Notes
+
+### Browsersync
+
+If you want to use Browsersync in conjunction with HTTPS then you can use [mkcert](https://mkcert.org) and add the certs
+into the ```/certs``` folder.  
+The settings for HTTPS are in ```/gulpfile.esm.js/server.js```

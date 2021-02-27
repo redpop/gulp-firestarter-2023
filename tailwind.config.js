@@ -5,7 +5,12 @@ module.exports = {
         defaultLineHeights: true,
         standardFontWeights: true,
     },
-    purge: [],
+    purge: {
+        content: [
+            './dist/**/*.html',
+            './src/templates/**/*.njk',
+            './src/assets/js/**/*.js'],
+    },
     theme: {
         extend: {},
     },

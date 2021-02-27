@@ -1,29 +1,29 @@
 PATHS:
     dist:
-        folder:
-            - 'dist'
         css:
             - 'dist/css'
-        javascript:
-            - 'dist/js'
+        folder:
+            - 'dist'
         images:
             - 'dist/img'
+        javascript:
+            - 'dist/js'
     src:
-        folder:
-            - 'src'
         css:
             - 'src/assets/css'
+        folder:
+            - 'src'
+        images:
+            - 'src/assets/img'
         javascript:
             - 'src/assets/js'
         javascriptEntries:
             - 'src/assets/js/app.js'
-        images:
-            - 'src/assets/img'
         staticAssets:
             - 'src/assets/*vendor/**/*'
             - 'src/assets/img/favicon.ico'
         templates:
-            - 'src/_includes'
+            - 'src/templates'
     clean: '{dist/**/*,.cache/**/*}'
 
 BROWSERSYNC:

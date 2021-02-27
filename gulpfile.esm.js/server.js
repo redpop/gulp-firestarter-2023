@@ -7,13 +7,15 @@ export default function server(done) {
         {
             // proxy: "https://example.org",
             // host: "example.org",
-            // https: {
-            //   key: "./certs/master.key",
-            //   cert: "./certs/master.crt",
-            // },
             server: {
                 baseDir: config.PATHS.dist.folder,
+                // index: 'index.html',
+                // directory: true,
             },
+            // https: {
+            //     key: './certs/localhost+2-key.pem',
+            //     cert: './certs/localhost+2.pem',
+            // },
             open: false,
             port: config.BROWSERSYNC.port,
             notify: false,

@@ -242,3 +242,6 @@ cypress/videos/*
 
 # test output files
 test/ouput
+
+# certs (https://mkcert.org/)
+/certs/*.pem

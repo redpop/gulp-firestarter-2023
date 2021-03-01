@@ -24,6 +24,7 @@ https://gulp-firestarter-2020.netlify.app/
 - [EditorConfig](https://editorconfig.org)
 - [ECMAScript modules](https://github.com/standard-things/esm)
 - [ESLint](https://eslint.org)
+- [Netlify](https://www.netlify.com)
 - [Prettier](https://www.npmjs.com/package/prettier)
 - [Sentry](https://sentry.io)
 - [Storybook](https://storybook.js.org)

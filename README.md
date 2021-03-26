@@ -9,7 +9,7 @@ https://gulp-firestarter-2020.netlify.app/
 - clean (dist folder)
 - copy (static assets)
 - images ([imagemin](https://www.npmjs.com/package/imagemin))
-- javascript ([Parcel](https://parceljs.org))
+- javascript ([rollup.js](https://www.rollupjs.org/))
 - postcss ([PostCSS](https://www.npmjs.com/package/postcss))
 - server ([Browsersync](https://www.npmjs.com/package/browser-sync))
 - [stylelint](https://www.npmjs.com/package/stylelint)

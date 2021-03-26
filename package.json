@@ -32,6 +32,10 @@
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.12",
     "@babel/register": "^7.13.8",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-multi-entry": "^4.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/stream": "^2.0.0",
     "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-links": "^6.1.21",
@@ -69,6 +73,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-stylelint": "^13.0.0",
+    "gulp-terser": "^2.0.1",
     "gulp-uglify": "^3.0.2",
     "js-yaml": "^4.0.0",
     "mocha": "^8.3.2",
@@ -85,7 +90,9 @@
     "stylelint": "^13.12.0",
     "stylelint-config-recommended": "^4.0.0",
     "stylelint-order": "^4.1.0",
-    "vinyl-named": "^1.1.0"
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-named": "^1.1.0",
+    "vinyl-source-stream": "^2.0.0"
   },
   "repository": {
     "type": "git",

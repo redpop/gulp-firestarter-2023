@@ -1,39 +1,44 @@
-import {src} from 'gulp';
+import {babel} from '@rollup/plugin-babel';
+import buffer from 'vinyl-buffer';
+import gulp from 'gulp';
+import nodeResolve from '@rollup/plugin-node-resolve';
+import multiEntry from '@rollup/plugin-multi-entry';
 import plugins from 'gulp-load-plugins';
+import rollup from '@rollup/stream';
+import source from 'vinyl-source-stream';
+import terser from 'gulp-terser';
 
 import * as config from './config';
 
 const $ = plugins();
 
-const execOptions = {
-    continueOnError: true, // default = false, true means don't emit error event
-    pipeStdout: true, // default = false, true means stdout is written to file.contents
-};
-
-const reporterOptions = {
-    err: true, // default = true, false means don't write err
-    stderr: true, // default = true, false means don't write stderr
-    stdout: true, // default = true, false means don't write stdout
-};
+let cache;
 
 export default function javascript() {
-    return src(config.PATHS.src.javascriptEntries, {
-        read: false,
+    const options = {
+        input: {
+            include: config.PATHS.src.javascriptEntries,
+        },
+        cache,
+        plugins: [
+            multiEntry(),
+            nodeResolve(),
+            babel({babelHelpers: 'bundled'}),
+        ],
+        output: {
+            format: 'iife',
+            sourcemap: true,
+        },
+    };
+    return rollup(options).on('bundle', (bundle) => {
+        cache = bundle;
     })
+        .pipe(source('app.js'))
+        .pipe(buffer())
+        .pipe($.if(!config.PRODUCTION, $.sourcemaps.init({loadMaps: true})))
         .pipe(
-            $.if(
-                !config.PRODUCTION,
-                $.exec(
-                    (file) =>
-                        `parcel build ${file.path} --out-dir ${config.PATHS.dist.javascript} --public-url ./`,
-                    execOptions,
-                ),
-                $.exec(
-                    (file) =>
-                        `parcel build ${file.path} --out-dir ${config.PATHS.dist.javascript} --no-source-maps --public-url ./`,
-                    execOptions,
-                ),
-            ),
-        )
-        .pipe($.exec.reporter(reporterOptions));
+            $.if(config.PRODUCTION, terser({keep_fnames: true, mangle: false})))
+        .pipe($.if(!config.PRODUCTION,
+            $.sourcemaps.write(config.PATHS.dist.javascript)))
+        .pipe(gulp.dest(config.PATHS.dist.javascript));
 }

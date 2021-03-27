@@ -29,7 +29,7 @@ const webpackConfig = {
 
 export default function javascript() {
     return gulp
-        .src(config.PATHS.src.javascriptEntries)
+        .src(config.PATH.src.javascriptEntries)
         .pipe(named())
         .pipe($.sourcemaps.init())
         .pipe(webpackStream(webpackConfig, webpack2))
@@ -42,5 +42,5 @@ export default function javascript() {
             ),
         )
         .pipe($.if(!config.PRODUCTION, $.sourcemaps.write()))
-        .pipe(gulp.dest(config.PATHS.dist.javascript));
+        .pipe(gulp.dest(config.PATH.dist.javascript));
 }

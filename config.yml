@@ -1,4 +1,4 @@
-PATHS:
+PATH:
     dist:
         css:
             - 'dist/css'

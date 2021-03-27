@@ -8,7 +8,7 @@ export default function server(done) {
             // proxy: "https://example.org",
             // host: "example.org",
             server: {
-                baseDir: config.PATHS.dist.folder,
+                baseDir: config.PATH.dist.folder,
                 // index: 'index.html',
                 // directory: true,
             },

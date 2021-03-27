@@ -17,7 +17,7 @@ let cache;
 export default function javascript() {
     const options = {
         input: {
-            include: config.PATHS.src.javascriptEntries,
+            include: config.PATH.src.javascriptEntries,
         },
         cache,
         plugins: [
@@ -39,6 +39,6 @@ export default function javascript() {
         .pipe(
             $.if(config.PRODUCTION, terser({keep_fnames: true, mangle: false})))
         .pipe($.if(!config.PRODUCTION,
-            $.sourcemaps.write(config.PATHS.dist.javascript)))
-        .pipe(gulp.dest(config.PATHS.dist.javascript));
+            $.sourcemaps.write(config.PATH.dist.javascript)))
+        .pipe(gulp.dest(config.PATH.dist.javascript));
 }

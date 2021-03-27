@@ -8,8 +8,8 @@ const $ = plugins();
 
 export default function images() {
     return gulp
-        .src(`${config.PATHS.src.images}/**/*`)
-        .pipe(changed(`${config.PATHS.dist.images}`))
+        .src(`${config.PATH.src.images}/**/*`)
+        .pipe(changed(`${config.PATH.dist.images}`))
         .pipe($.if(config.PRODUCTION, $.imagemin()))
-        .pipe(gulp.dest(config.PATHS.dist.images));
+        .pipe(gulp.dest(config.PATH.dist.images));
 }

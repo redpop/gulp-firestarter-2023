@@ -5,17 +5,17 @@ import * as config from './config';
 
 export default function templates() {
     return gulp
-        .src(`${config.PATHS.src.templates.pages}/**/*.html`)
+        .src(`${config.PATH.src.templates.pages}/**/*.html`)
         .pipe(
             panini({
-                root: `${config.PATHS.src.templates.pages}`,
-                layouts: `${config.PATHS.src.templates.layouts}`,
-                partials: `${config.PATHS.src.templates.partials}`,
-                data: `${config.PATHS.src.templates.data}`,
-                helpers: `${config.PATHS.src.templates.helpers}`,
+                root: `${config.PATH.src.templates.pages}`,
+                layouts: `${config.PATH.src.templates.layouts}`,
+                partials: `${config.PATH.src.templates.partials}`,
+                data: `${config.PATH.src.templates.data}`,
+                helpers: `${config.PATH.src.templates.helpers}`,
             }),
         )
-        .pipe(gulp.dest(config.PATHS.dist.folder));
+        .pipe(gulp.dest(config.PATH.dist.folder));
 }
 
 export function resetTemplates(done) {

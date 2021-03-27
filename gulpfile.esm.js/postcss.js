@@ -18,7 +18,7 @@ export default function postcss() {
     ].filter(Boolean);
 
     return gulp
-        .src(`${config.PATHS.src.css}/app.pcss`)
+        .src(`${config.PATH.src.css}/app.pcss`)
         .pipe($.sourcemaps.init())
         .pipe($.postcss(postCssPlugins))
         .pipe(
@@ -28,6 +28,6 @@ export default function postcss() {
         )
         .pipe($.if(config.PRODUCTION, $.cleanCss({compatibility: '*'})))
         .pipe($.if(!config.PRODUCTION, $.sourcemaps.write('.')))
-        .pipe(gulp.dest(config.PATHS.dist.css))
+        .pipe(gulp.dest(config.PATH.dist.css))
         .pipe(browser.reload({stream: true}));
 }

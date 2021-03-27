@@ -8,4 +8,4 @@ function loadConfig() {
     return yaml.load(ymlFile);
 }
 
-export const {PATHS, BROWSERSYNC} = loadConfig();
+export const {PATH, BROWSERSYNC} = loadConfig();

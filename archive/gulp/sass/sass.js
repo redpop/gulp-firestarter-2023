@@ -11,16 +11,16 @@ export default function sass() {
     const postCssPlugins = [autoprefixer()].filter(Boolean);
 
     return gulp
-        .src(`${config.PATHS.src.sass}/app.scss`)
+        .src(`${config.PATH.src.sass}/app.scss`)
         .pipe($.sourcemaps.init())
         .pipe(
             $.sass({
-                includePaths: config.PATHS.inlcudePathsForSass,
+                includePaths: config.PATH.inlcudePathsForSass,
             }).on('error', $.sass.logError),
         )
         .pipe($.postcss(postCssPlugins))
         .pipe($.if(config.PRODUCTION, $.cleanCss({compatibility: '*'})))
         .pipe($.if(!config.PRODUCTION, $.sourcemaps.write('.')))
-        .pipe(gulp.dest(config.PATHS.dist.css))
+        .pipe(gulp.dest(config.PATH.dist.css))
         .pipe(browser.reload({stream: true}));
 }

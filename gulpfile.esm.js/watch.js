@@ -10,20 +10,20 @@ import stylelint from './stylelint';
 import templates from './templates';
 
 export default function watch() {
-    gulp.watch(config.PATHS.src.staticAssets, copy);
-    gulp.watch(`${config.PATHS.src.templates}/**/*`).on(
+    gulp.watch(config.PATH.src.staticAssets, copy);
+    gulp.watch(`${config.PATH.src.templates}/**/*`).on(
         'all',
         gulp.series(templates, reload),
     );
-    gulp.watch(`${config.PATHS.src.css}/**/*.pcss`).on(
+    gulp.watch(`${config.PATH.src.css}/**/*.pcss`).on(
         'all',
         gulp.series(postcss, stylelint),
     );
-    gulp.watch(`${config.PATHS.src.javascript}/**/*.js`).on(
+    gulp.watch(`${config.PATH.src.javascript}/**/*.js`).on(
         'all',
         gulp.series(javascript, reload),
     );
-    gulp.watch(`${config.PATHS.src.images}/**/*`).on(
+    gulp.watch(`${config.PATH.src.images}/**/*`).on(
         'all',
         gulp.series(images, reload),
     );

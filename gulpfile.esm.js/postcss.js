@@ -16,18 +16,16 @@ export default function postcss() {
         tailwindcss,
         postcssPresetEnv({stage: 1}),
     ].filter(Boolean);
-
-    return gulp
-        .src(`${config.PATH.src.css}/app.pcss`)
-        .pipe($.sourcemaps.init())
-        .pipe($.postcss(postCssPlugins))
-        .pipe(
-            rename((path) => {
-                path.extname = '.css';
-            }),
-        )
-        .pipe($.if(config.PRODUCTION, $.cleanCss({compatibility: '*'})))
-        .pipe($.if(!config.PRODUCTION, $.sourcemaps.write('.')))
-        .pipe(gulp.dest(config.PATH.dist.css))
-        .pipe(browser.reload({stream: true}));
+    return gulp.src(`${config.PATH.src.css}/app.pcss`).
+    pipe($.sourcemaps.init()).
+    pipe($.postcss(postCssPlugins)).
+    pipe(
+        rename((path) => {
+            path.extname = '.css';
+        }),
+    ).
+    pipe($.if(config.PRODUCTION, $.cleanCss({compatibility: '*'}))).
+    pipe($.if(!config.PRODUCTION, $.sourcemaps.write('.'))).
+    pipe(gulp.dest(config.PATH.dist.css)).
+    pipe(browser.reload({stream: true}));
 }

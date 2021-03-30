@@ -30,15 +30,15 @@ export default function javascript() {
             sourcemap: true,
         },
     };
-    return rollup(options).on('bundle', (bundle) => {
+    return rollup(options).
+    on('bundle', (bundle) => {
         cache = bundle;
-    })
-        .pipe(source('app.js'))
-        .pipe(buffer())
-        .pipe($.if(!config.PRODUCTION, $.sourcemaps.init({loadMaps: true})))
-        .pipe(
-            $.if(config.PRODUCTION, terser({keep_fnames: true, mangle: false})))
-        .pipe($.if(!config.PRODUCTION,
-            $.sourcemaps.write(config.PATH.dist.javascript)))
-        .pipe(gulp.dest(config.PATH.dist.javascript));
+    }).
+    pipe(source('app.js')).
+    pipe(buffer()).
+    pipe($.if(!config.PRODUCTION, $.sourcemaps.init({loadMaps: true}))).
+    pipe($.if(config.PRODUCTION, terser({keep_fnames: true, mangle: false}))).
+    pipe($.if(!config.PRODUCTION,
+        $.sourcemaps.write(config.PATH.dist.javascript))).
+    pipe(gulp.dest(config.PATH.dist.javascript));
 }

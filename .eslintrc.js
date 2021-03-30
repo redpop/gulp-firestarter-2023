@@ -42,7 +42,7 @@ module.exports = {
                 'devDependencies': true,
             },
         ],
-        'indent': ['error', 4],
+        'indent': ['error', 4, {'MemberExpression': 0}],
         'require-jsdoc': [
             'error',
             {

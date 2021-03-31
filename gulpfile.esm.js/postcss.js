@@ -17,14 +17,26 @@ export default function postcss() {
         postcssPresetEnv({stage: 1}),
     ].filter(Boolean);
     return gulp.src(`${config.PATH.src.css}/app.pcss`).
-    pipe($.sourcemaps.init()).
+    pipe($.if(!config.PRODUCTION, $.sourcemaps.init())).
     pipe($.postcss(postCssPlugins)).
+    pipe($.if(config.PRODUCTION,
+        $.cleanCss(
+            {
+                compatibility: '*',
+                level: 2,
+            }),
+        $.cleanCss(
+            {
+                compatibility: '*',
+                level: 2,
+                format: 'beautify',
+            }),
+    )).
     pipe(
         rename((path) => {
             path.extname = '.css';
         }),
     ).
-    pipe($.if(config.PRODUCTION, $.cleanCss({compatibility: '*'}))).
     pipe($.if(!config.PRODUCTION, $.sourcemaps.write('.'))).
     pipe(gulp.dest(config.PATH.dist.css)).
     pipe(browser.reload({stream: true}));

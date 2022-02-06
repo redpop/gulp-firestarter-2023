@@ -13,7 +13,7 @@ export default function watch() {
     gulp.watch(config.PATH.src.staticAssets, copy);
     gulp.watch(`${config.PATH.src.templates}/**/*`).on(
         'all',
-        gulp.series(templates, reload),
+        gulp.series(templates, postcss, reload, stylelint),
     );
     gulp.watch(`${config.PATH.src.css}/**/*.pcss`).on(
         'all',

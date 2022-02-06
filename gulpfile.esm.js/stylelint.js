@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import gulpStylelint from 'gulp-stylelint';
+import gulpStylelint from '@ronilaukkarinen/gulp-stylelint';
 
 import * as config from './config';
 

@@ -14,8 +14,9 @@
     "preinstall": "npx check-engine",
     "caniuse:update": "npx browserslist@latest --update-db",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "test": "npm run build"
+    "storybook:build": "build-storybook",
+    "test": "npm run build",
+    "ci:test": "npm run build && start-server-and-test 'http-server ./dist -p 8000 -c-1 --silent' 8000 'npm run cy:run'"
   },
   "author": "Martin Alker <hacktheplanet@mailbox.org>",
   "license": "MIT",

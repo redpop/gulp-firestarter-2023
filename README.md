@@ -26,7 +26,6 @@ https://gulp-firestarter-2020.netlify.app/
 - [ESLint](https://eslint.org)
 - [Netlify](https://www.netlify.com)
 - [Prettier](https://www.npmjs.com/package/prettier)
-- [Storybook](https://storybook.js.org)
 
 ## Notes
 

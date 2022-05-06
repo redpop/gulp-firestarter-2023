@@ -4,7 +4,6 @@ import plugins from 'gulp-load-plugins';
 import postcssImport from 'postcss-import';
 import postcssPresetEnv from 'postcss-preset-env';
 import rename from 'gulp-rename';
-import tailwindcss from 'tailwindcss';
 
 import * as config from './config';
 
@@ -13,7 +12,6 @@ const $ = plugins();
 export default function postcss() {
     const postCssPlugins = [
         postcssImport,
-        tailwindcss,
         postcssPresetEnv({stage: 1}),
     ].filter(Boolean);
     return gulp.src(`${config.PATH.src.css}/app.pcss`).

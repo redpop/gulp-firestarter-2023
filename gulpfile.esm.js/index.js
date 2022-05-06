@@ -5,9 +5,9 @@ import copy from './copy';
 import images from './images';
 import javascript from './javascript';
 import templates from './templates';
-import postcss from './postcss';
 import server from './server';
 import stylelint from './stylelint';
+import styles from './styles';
 import watch from './watch';
 
 export {
@@ -15,15 +15,15 @@ export {
     copy,
     images,
     javascript,
-    postcss,
     server,
     stylelint,
+    styles,
     templates,
     watch,
 };
 
 export function build(done) {
-    series(clean, parallel(templates, javascript, images, copy), postcss)(done);
+    series(clean, parallel(templates, javascript, images, copy), styles)(done);
 }
 
 export default series(build, server, watch);

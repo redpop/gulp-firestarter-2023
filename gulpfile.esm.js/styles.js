@@ -1,25 +1,24 @@
 import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
-import fibers from 'fibers';
+import dartSass from 'sass';
 import gulp from 'gulp';
 import plugins from 'gulp-load-plugins';
-// import rename from 'gulp-rename';
 
 import * as config from './config';
 
 const $ = plugins();
 
-export default function postcss() {
+export default function styles() {
+    const sass = $.sass(dartSass);
     const postCssPlugins = [
         autoprefixer,
     ].filter(Boolean);
     return gulp.src(`${config.PATH.src.css}/app.scss`).
         pipe($.if(!config.PRODUCTION, $.sourcemaps.init())).
         pipe(
-            $.dartSass({
+            sass({
                 includePaths: config.PATH.includePathsForSass,
-                fiber: fibers,
-            }).on('error', $.dartSass.logError),
+            }).on('error', sass.logError),
         ).
         pipe($.postcss(postCssPlugins)).
         pipe($.if(config.PRODUCTION,
@@ -35,11 +34,6 @@ export default function postcss() {
                     format: 'beautify',
                 }),
         )).
-        // pipe(
-        //     rename((path) => {
-        //         path.extname = '.css';
-        //     }),
-        // ).
         pipe($.if(!config.PRODUCTION, $.sourcemaps.write('.'))).
         pipe(gulp.dest(config.PATH.dist.css)).
         pipe(browser.reload({stream: true}));

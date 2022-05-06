@@ -10,7 +10,7 @@ https://gulp-firestarter-2020.netlify.app/
 - copy (static assets)
 - images ([imagemin](https://www.npmjs.com/package/imagemin))
 - javascript ([rollup.js](https://www.rollupjs.org/))
-- postcss ([PostCSS](https://www.npmjs.com/package/postcss))
+- sass ([Sass](https://sass-lang.com/))
 - server ([Browsersync](https://www.npmjs.com/package/browser-sync))
 - [stylelint](https://www.npmjs.com/package/stylelint)
 - templates ([11ty](https://www.11ty.dev/))
@@ -19,7 +19,6 @@ https://gulp-firestarter-2020.netlify.app/
 
 - [11ty](https://www.11ty.dev/)
 - [Browserslist](https://github.com/browserslist/browserslist)
-- [Tailwind CSS](https://tailwindcss.com)
 - [Cypress](https://www.cypress.io) / [Mocha](https://mochajs.org)
 - [EditorConfig](https://editorconfig.org)
 - [ECMAScript modules](https://github.com/standard-things/esm)

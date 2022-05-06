@@ -5,19 +5,19 @@ import * as config from './config';
 import copy from './copy';
 import images from './images';
 import javascript from './javascript';
-import postcss from './postcss';
 import stylelint from './stylelint';
+import styles from './styles';
 import templates from './templates';
 
 export default function watch() {
     gulp.watch(config.PATH.src.staticAssets, copy);
     gulp.watch(`${config.PATH.src.templates}/**/*`).on(
         'all',
-        gulp.series(templates, postcss, reload, stylelint),
+        gulp.series(templates, styles, reload, stylelint),
     );
     gulp.watch(`${config.PATH.src.css}/**/*.pcss`).on(
         'all',
-        gulp.series(postcss, stylelint),
+        gulp.series(styles, stylelint),
     );
     gulp.watch(`${config.PATH.src.javascript}/**/*.js`).on(
         'all',

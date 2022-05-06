@@ -25,6 +25,8 @@ PATH:
         templates:
             - 'src/templates'
     clean: '{dist/**/*,.cache/**/*}'
+    includePathsForSass:
+        - 'node_modules'
 
 BROWSERSYNC:
     port: 8000

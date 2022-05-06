@@ -15,7 +15,7 @@ export default function watch() {
         'all',
         gulp.series(templates, styles, reload, stylelint),
     );
-    gulp.watch(`${config.PATH.src.css}/**/*.pcss`).on(
+    gulp.watch(`${config.PATH.src.css}/**/*.scss`).on(
         'all',
         gulp.series(styles, stylelint),
     );

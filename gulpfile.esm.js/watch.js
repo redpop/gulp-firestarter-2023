@@ -3,7 +3,6 @@ import gulp from 'gulp';
 import {reload} from './server';
 import * as config from './config';
 import copy from './copy';
-import images from './images';
 import javascript from './javascript';
 import stylelint from './stylelint';
 import styles from './styles';
@@ -22,9 +21,5 @@ export default function watch() {
     gulp.watch(`${config.PATH.src.javascript}/**/*.js`).on(
         'all',
         gulp.series(javascript, reload),
-    );
-    gulp.watch(`${config.PATH.src.images}/**/*`).on(
-        'all',
-        gulp.series(images, reload),
     );
 }

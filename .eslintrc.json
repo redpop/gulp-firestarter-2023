@@ -10,7 +10,6 @@
         "plugin:import/errors",
         "plugin:import/warnings",
         "prettier",
-        "prettier/unicorn",
         "plugin:prettier/recommended"
     ],
     // globals: {

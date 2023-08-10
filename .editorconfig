@@ -7,49 +7,16 @@ root = true
 [*]
 charset = utf-8
 end_of_line = lf
+indent_size = 4
+indent_style = space
 insert_final_newline = true
+max_line_length = 120
+tab_width = 4
 trim_trailing_whitespace = true
-
-# CSS-Files
-[*.css]
-indent_style = space
-indent_size = 4
-
-# HTML-Files
-[*.html]
-indent_style = space
-indent_size = 4
-
-# TMPL-Files
-[*.tmpl]
-indent_style = space
-indent_size = 4
-
-# LESS-Files
-[*.less]
-indent_style = space
-indent_size = 4
-
-# JS-Files
-[*.js]
-indent_style = space
-indent_size = 4
 
 # MD-Files
 [*.md]
-indent_style = space
-indent_size = 4
 trim_trailing_whitespace = false
-
-# YML-Files
-[{*.yml, *.yaml}]
-indent_style = space
-indent_size = 4
-
-# package.json, composer.json or .travis.yml
-[{package.json, composer.json, .travis.yml}]
-indent_style = space
-indent_size = 2
 
 # Makefiles always use tabs for indentation
 [Makefile]

@@ -4,8 +4,6 @@ PATH:
             - 'dist/css'
         folder:
             - 'dist'
-        images:
-            - 'dist/img'
         javascript:
             - 'dist/js'
     src:
@@ -13,19 +11,19 @@ PATH:
             - 'src/assets/css'
         folder:
             - 'src'
-        images:
-            - 'src/assets/img'
         javascript:
             - 'src/assets/js'
         javascriptEntries:
             - 'src/assets/js/app.js'
         staticAssets:
+            - 'src/assets/img/**/*'
             - 'src/assets/*vendor/**/*'
-            - 'src/assets/img/favicon.ico'
         templates:
             - 'src/templates'
     clean: '{dist/**/*,.cache/**/*}'
+    includePathsForSass:
+        - 'node_modules'
 
 BROWSERSYNC:
-    port: 8000
+    port: 8080
     scrollmode: false

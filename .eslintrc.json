@@ -1,0 +1,113 @@
+{
+    "env": {
+        "es2021": true,
+        "browser": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:eslint-comments/recommended",
+        "plugin:unicorn/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "prettier",
+        "plugin:prettier/recommended"
+    ],
+    // globals: {
+    //     Atomics: "readonly",
+    //     SharedArrayBuffer: "readonly"
+    // },
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module"
+    },
+    "plugins": ["eslint-comments", "import", "unicorn", "prettier"],
+    "rules": {
+        "@typescript-eslint/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
+        "@typescript-eslint/no-shadow": ["error"],
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "complexity": ["error", 10],
+        "indent": ["error", 4, { "MemberExpression": 0 }],
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error",
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true
+            }
+        ],
+        "no-await-in-loop": "error",
+        "no-eval": "error",
+        "no-implied-eval": "error",
+        "no-shadow": "off",
+        "no-use-before-define": "off",
+        "node/no-extraneous-import": "off",
+        "node/no-unpublished-import": "off",
+        "prefer-promise-reject-errors": "error",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".tsx"]
+            }
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": [
+            "warn",
+            {
+                "additionalHooks": "(useRecoilCallback|useRecoilTransaction_UNSTABLE)"
+            }
+        ],
+        "react/jsx-sort-props": [
+            "error",
+            {
+                "callbacksLast": true,
+                "shorthandLast": true,
+                "noSortAlphabetically": false,
+                "reservedFirst": true
+            }
+        ],
+        "require-jsdoc": [
+            "error",
+            {
+                "require": {
+                    "FunctionDeclaration": false,
+                    "MethodDefinition": false,
+                    "ClassDeclaration": false,
+                    "ArrowFunctionExpression": false,
+                    "FunctionExpression": false
+                }
+            }
+        ],
+        "simple-import-sort/exports": "error",
+        "simple-import-sort/imports": [
+            "error",
+            {
+                // https://github.com/lydell/eslint-plugin-simple-import-sort/#custom-grouping
+                "groups": [
+                    // Node.js builtins prefixed with `node:`
+                    ["^node:"],
+                    // React related packages come first
+                    ["^react"],
+                    // Next.js related packages
+                    ["^next"],
+                    // Then the rest.
+                    ["^@?\\w"],
+                    // Internal packages
+                    ["^@/(context|hooks|lib|utils)(/.*|$)"],
+                    // components
+                    ["^@/(components)(/.*|$)"],
+                    // Side effect imports.
+                    ["^\\u0000"],
+                    // Parent imports. Put `..` last.
+                    ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+                    // Other relative imports. Put same-folder imports and `.` last.
+                    ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+                    // Style imports.
+                    ["^.+\\.s?css$"]
+                ]
+            }
+        ],
+        "space-before-function-paren": ["error", "never"],
+        "prettier/prettier": "error"
+    }
+}

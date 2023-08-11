@@ -2,15 +2,10 @@
 permalink: "index.html"
 ---
 
-{% extends "_layouts/default.njk" %}
+{% extends "_layouts/default.njk" %} {% set pageTitle = 'Gulp firestarter 2023 (v1.0.0)' %} {% block main %} {% include
+'_partials/partial.njk' %}
 
-{% set pageTitle = 'Gulp firestarter 2023 (v2.0.0)' %}
-
-{% block main %}
-    {% include '_partials/partial.njk' %}
-
-    <p class="">
-        <a href="https://gitlab.com/redpop/gulp-firestarter-2023"
-           class="">https://gitlab.com/redpop/gulp-firestarter-2023</a>
-    </p>
+<p class="">
+    <a href="https://gitlab.com/redpop/gulp-firestarter-2023">https://gitlab.com/redpop/gulp-firestarter-2023</a>
+</p>
 {% endblock %}

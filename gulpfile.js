@@ -17,7 +17,8 @@ const terser = require("gulp-terser");
 
 const config = {
     browsersync: {
-        directory: true,
+        previewDirectory: false,
+        serverDirectory: false,
         port: 8080,
         scrollMode: false,
     },
@@ -37,31 +38,6 @@ const config = {
 
 const PRODUCTION = process.env.NODE_ENV === "production";
 const $ = plugins();
-
-async function serverTask() {
-    await browser.init(
-        // https://browsersync.io/docs/options
-        {
-            // proxy: "https://example.org",
-            // host: "example.org",
-            server: {
-                baseDir: config.distPath,
-                // index: "index.html",
-                directory: config.browsersync.directory,
-            },
-            // https: {
-            //     key: './certs/localhost+2-key.pem',
-            //     cert: './certs/localhost+2.pem',
-            // },
-            open: false,
-            port: config.browsersync.port,
-            notify: false,
-            ghostMode: {
-                scroll: config.browsersync.scrollMode,
-            },
-        },
-    );
-}
 
 async function browserReloadTask() {
     await browser.reload();
@@ -100,6 +76,45 @@ function javascriptTask() {
             .pipe($.if(PRODUCTION, terser({ keep_fnames: true, mangle: false })))
             // .pipe($.if(!PRODUCTION, $.sourcemaps.write(config.javascriptDistPath)))
             .pipe(dest(config.javascriptDistPath))
+    );
+}
+
+async function previewTask() {
+    await browser.init({
+        server: {
+            baseDir: config.distPath,
+            directory: config.browsersync.previewDirectory,
+        },
+        open: false,
+        port: config.browsersync.port,
+        notify: false,
+        ghostMode: {
+            scroll: config.browsersync.scrollMode,
+        },
+    });
+}
+
+async function serverTask() {
+    await browser.init(
+        // https://browsersync.io/docs/options
+        {
+            // proxy: "https://example.org",
+            // host: "example.org",
+            server: {
+                baseDir: config.distPath,
+                directory: config.browsersync.serverDirectory,
+            },
+            // https: {
+            //     key: './certs/localhost+2-key.pem',
+            //     cert: './certs/localhost+2.pem',
+            // },
+            open: false,
+            port: config.browsersync.port,
+            notify: false,
+            ghostMode: {
+                scroll: config.browsersync.scrollMode,
+            },
+        },
     );
 }
 
@@ -160,6 +175,7 @@ exports.build = buildTask;
 exports.copy = copyTask;
 exports.clean = cleanTask;
 exports.javascript = javascriptTask;
+exports.preview = previewTask;
 exports.server = serverTask;
 exports.styles = stylesTask;
 exports.stylesLint = stylesLintTask;

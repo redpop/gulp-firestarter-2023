@@ -1,6 +1,6 @@
 {
     "name": "gulp-firestarter-2023",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Gulp starter kit 2023",
     "main": "gulpfile.esm.js",
     "scripts": {
@@ -12,6 +12,7 @@
         "ncu": "pnpm dlx npm-check-updates -u",
         "ncu:i": "pnpm dlx npm-check-updates -i",
         "preinstall": "npx only-allow pnpm",
+        "preview": "pnpm build && gulp preview",
         "start": "gulp"
     },
     "author": "Martin Alker <hacktheplanet@mailbox.org>",

@@ -1,17 +1,17 @@
-@import "bootstrap/scss/functions";
+@import 'bootstrap/scss/functions';
 
 // Toggle global options
 $enable-dark-mode: false;
 
 // Required
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/root";
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/root';
 
 // Optional Bootstrap components here
-@import "bootstrap/scss/reboot";
-@import "bootstrap/scss/type";
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
 
 // Layout & components
 // @import "bootstrap/scss/accordion";
@@ -44,9 +44,9 @@ $enable-dark-mode: false;
 // @import "bootstrap/scss/transitions";
 
 // Helpers
-@import "bootstrap/scss/helpers";
+@import 'bootstrap/scss/helpers';
 
 // Utilities
 // @import "bootstrap/scss/utilities/api";
 
-@import "components/a";
+@import 'components/a';

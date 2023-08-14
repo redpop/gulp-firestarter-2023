@@ -1,6 +1,6 @@
 {
     "name": "gulp-firestarter-2023",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "description": "Gulp starter kit 2023",
     "main": "gulpfile.esm.js",
     "scripts": {

@@ -1,6 +1,8 @@
+const config = require('./gulp/config');
+
 module.exports = {
     dir: {
-        input: 'src/templates',
-        output: 'dist',
+        input: config.templatesPath,
+        output: config.distPath,
     },
 };

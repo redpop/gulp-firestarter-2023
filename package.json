@@ -1,19 +1,19 @@
 {
     "name": "gulp-firestarter-2023",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Gulp starter kit 2023",
     "main": "gulpfile.esm.js",
     "scripts": {
         "caniuse:update": "pnpm dlx browserslist@latest --update-db",
         "check-types": "tsc --noEmit",
+        "dev": "gulp",
         "build": "NODE_ENV=production gulp build",
         "gulp": "./node_modules/gulp-cli/bin/gulp.js",
         "lint:fix": "eslint --fix **/*.ts **/*.js **/*.tsx **/*.jsx --no-error-on-unmatched-pattern",
         "ncu": "pnpm dlx npm-check-updates -u",
         "ncu:i": "pnpm dlx npm-check-updates -i",
         "preinstall": "npx only-allow pnpm",
-        "preview": "pnpm build && gulp preview",
-        "start": "gulp"
+        "preview": "pnpm build && gulp preview"
     },
     "author": "Martin Alker <hacktheplanet@mailbox.org>",
     "license": "MIT",
@@ -64,8 +64,8 @@
         "gulp-uglify": "^3.0.2",
         "http-server": "^14.1.1",
         "js-yaml": "^4.1.0",
-        "postcss": "^8.4.27",
-        "prettier": "^3.0.1",
+        "postcss": "^8.4.28",
+        "prettier": "^3.0.2",
         "rimraf": "^5.0.1",
         "rollup": "^3.28.0",
         "sass": "^1.65.1",
